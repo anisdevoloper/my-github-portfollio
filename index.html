@@ -3,269 +3,641 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f3ec">
-  <meta name="description" content="Anis Khan — digital marketer and web designer creating digital experiences, marketing campaigns, and responsive websites.">
-  <meta property="og:title" content="Anis Khan — Digital Marketer & Web Designer">
-  <meta property="og:description" content="Digital marketing, creative advertising, and modern web design.">
-  <meta property="og:type" content="website">
-  <title>Anis Khan — Digital Marketer & Web Designer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#101b2b">
+  <meta name="description" content="Anis Khan — Digital Marketer and Web Designer.">
+  <title>Anis Khan — Digital Marketer &amp; Web Designer</title>
+
   <style>
-    /* Customize the complete palette here. */
     :root {
-      --paper: #f6f3ec;
-      --ink: #17201d;
-      --muted: #69716b;
-      --line: #d9d8cf;
-      --accent: #f05b35;
-      --soft: #e9e7dd;
-      --font: "DM Sans", sans-serif;
-      --display: "Manrope", sans-serif;
-      --page: 1160px;
+      --bg: #101b2b;
+      --bg-soft: #142338;
+      --surface: #192b40;
+      --surface-light: #20364a;
+      --text: #f4f2eb;
+      --muted: #b7c2cc;
+      --accent: #65e2c2;
+      --accent-dark: #153a3d;
+      --line: rgba(244, 242, 235, .14);
+      --max: 1160px;
+      --radius: 14px;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
-    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
     a { color: inherit; text-decoration: none; }
-    button { font: inherit; }
-    :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
-    .wrap { width: min(var(--page), calc(100% - 48px)); margin-inline: auto; }
-    .eyebrow { color: var(--accent); font-size: .75rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
-    .topbar { position: sticky; z-index: 10; top: 0; border-bottom: 1px solid #d9d8cfb3; background: #f6f3ecee; backdrop-filter: blur(12px); }
-    .nav { height: 76px; display: flex; align-items: center; justify-content: space-between; }
-    .brand { font-family: var(--display); font-weight: 800; letter-spacing: -.06em; font-size: 1.2rem; }
-    .brand span { color: var(--accent); }
-    .navlinks { display: flex; gap: 30px; align-items: center; font-size: .88rem; }
-    .navlinks a:not(.pill) { position: relative; padding-block: 8px; }
-    .navlinks a:not(.pill)::after { content: ""; position: absolute; bottom: 2px; left: 0; width: 100%; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: right; transition: transform .25s; }
-    .navlinks a:hover::after { transform: scaleX(1); transform-origin: left; }
-    .pill, .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 1px solid var(--ink); border-radius: 99px; padding: 12px 18px; font-size: .87rem; font-weight: 600; transition: background .2s, color .2s, transform .2s; }
-    .pill:hover, .button:hover { transform: translateY(-2px); background: var(--ink); color: white; }
-    .button.primary { background: var(--accent); border-color: var(--accent); color: white; }
-    .button.primary:hover { background: var(--ink); border-color: var(--ink); }
-    .menu-toggle { display: none; border: 1px solid var(--line); border-radius: 50%; width: 44px; height: 44px; color: var(--ink); background: transparent; cursor: pointer; }
-    .hero { min-height: 660px; display: grid; grid-template-columns: 1.25fr .75fr; align-items: center; gap: 40px; padding-block: 74px 86px; position: relative; overflow: hidden; }
-    .hero::after { content: ""; position: absolute; width: 370px; height: 370px; border: 1px solid var(--line); border-radius: 50%; right: 2%; top: 13%; z-index: -1; box-shadow: 0 0 0 35px #f6f3ec, 0 0 0 36px var(--line), 0 0 0 88px #f6f3ec, 0 0 0 89px var(--line); opacity: .55; animation: drift 16s ease-in-out infinite alternate; }
-    h1, h2, h3, p { margin-top: 0; }
-    h1 { max-width: 800px; margin-bottom: 24px; font: 700 clamp(3.4rem, 8vw, 7rem)/.98 var(--display); letter-spacing: -.085em; }
-    h1 em { color: var(--accent); font-style: normal; }
-    .intro { max-width: 510px; color: var(--muted); line-height: 1.8; font-size: 1.05rem; }
-    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
-    .hero-note { justify-self: end; align-self: end; max-width: 230px; padding: 0 0 8px 17px; border-left: 2px solid var(--accent); color: var(--muted); font-size: .85rem; line-height: 1.6; }
-    .hero-note strong { display: block; color: var(--ink); font-size: .95rem; margin-bottom: 4px; }
-    section { padding-block: 100px; }
-    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 38px; }
-    h2 { margin: 8px 0 0; font: 700 clamp(2.5rem, 5vw, 4.4rem)/1 var(--display); letter-spacing: -.075em; }
-    .section-head p { max-width: 330px; margin: 0; color: var(--muted); line-height: 1.7; }
-    .work { border-top: 1px solid var(--line); }
-    .work-empty { min-height: 260px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 25px; padding: 40px; background: var(--soft); }
-    .work-empty h3 { max-width: 580px; margin: 0 0 10px; font: 600 clamp(1.5rem, 3vw, 2.35rem)/1.15 var(--display); letter-spacing: -.05em; }
-    .work-empty p { max-width: 600px; margin: 0; color: var(--muted); line-height: 1.7; }
-    .work-mark { display: grid; place-items: center; width: 86px; height: 86px; border-radius: 50%; background: var(--accent); color: white; font-size: 2rem; }
-    .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-    .service { min-height: 175px; padding: 23px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background .2s; }
-    .service:hover { background: var(--soft); }
-    .service .num { display: block; color: var(--accent); font-size: .75rem; margin-bottom: 28px; }
-    .service h3 { margin: 0 0 8px; font: 600 1.05rem var(--display); }
-    .service p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.6; }
-    .about { background: var(--ink); color: var(--paper); }
-    .about-inner { display: grid; grid-template-columns: .75fr 1.25fr; gap: 70px; align-items: start; }
-    .about h2 { max-width: 380px; }
-    .about .eyebrow { color: #ff8968; }
-    .about-copy { color: #c6cbc5; line-height: 1.85; font-size: 1.04rem; }
-    .about-copy p { margin-bottom: 20px; }
-    .skills { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 25px; }
-    .skills span { padding: 9px 13px; border: 1px solid #48524c; border-radius: 99px; color: #f6f3ec; font-size: .82rem; }
-    .contact { padding-block: 100px 70px; }
-    .contact-box { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 30px; padding: clamp(28px, 6vw, 70px); background: var(--accent); color: white; }
-    .contact-box .eyebrow { color: #ffe2d8; }
-    .contact-box h2 { max-width: 700px; margin-bottom: 14px; }
-    .contact-box p { max-width: 500px; margin-bottom: 0; line-height: 1.7; color: #fff0e9; }
-    .contact-box .button { background: white; border-color: white; color: var(--ink); white-space: nowrap; }
-    .contact-box .button:hover { background: var(--ink); border-color: var(--ink); color: white; }
-    .contact-details { display: flex; flex-wrap: wrap; gap: 15px 30px; margin-top: 25px; font-size: .9rem; }
-    .contact-details a { text-decoration: underline; text-underline-offset: 4px; }
-    footer { padding: 25px 0 32px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: .82rem; }
-    footer a { color: var(--ink); }
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-    @keyframes drift { to { transform: translate(-12px, 14px) rotate(8deg); } }
-    @media (max-width: 800px) {
-      .hero { min-height: auto; grid-template-columns: 1fr; padding-block: 85px 60px; }
-      .hero::after { width: 230px; height: 230px; right: -60px; top: 8%; }
-      .hero-note { justify-self: start; }
-      .service-grid { grid-template-columns: repeat(2, 1fr); }
-      .about-inner { grid-template-columns: 1fr; gap: 28px; }
-      .contact-box { grid-template-columns: 1fr; align-items: start; }
-      .section-head { align-items: start; flex-direction: column; }
+    button, input, textarea, select { font: inherit; }
+    button { color: inherit; }
+    .container { width: min(var(--max), 90%); margin-inline: auto; }
+    .skip-link {
+      position: fixed; z-index: 100; left: 12px; top: -60px;
+      background: var(--accent); color: var(--bg); padding: 10px 14px;
     }
-    @media (max-width: 600px) {
-      .wrap { width: min(100% - 34px, var(--page)); }
-      .nav { height: 66px; }
-      .menu-toggle { display: inline-grid; place-items: center; }
-      .navlinks { display: none; position: absolute; top: 66px; left: 0; right: 0; padding: 20px 22px 24px; background: var(--paper); border-bottom: 1px solid var(--line); align-items: stretch; flex-direction: column; gap: 14px; }
-      .navlinks.open { display: flex; }
-      .navlinks .pill { align-self: start; }
-      .hero { padding-top: 68px; gap: 32px; }
-      h1 { font-size: clamp(3.3rem, 16vw, 5rem); }
-      section { padding-block: 70px; }
-      .work-empty { grid-template-columns: 1fr; padding: 26px; }
-      .work-mark { width: 60px; height: 60px; }
-      .service-grid { grid-template-columns: 1fr; }
-      .service { min-height: auto; }
-      .service .num { margin-bottom: 18px; }
-      footer { flex-direction: column; }
+    .skip-link:focus { top: 12px; }
+
+    /* Navigation */
+    .site-header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(16, 27, 43, .88);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+    .nav {
+      min-height: 76px; display: flex; align-items: center;
+      justify-content: space-between; gap: 24px;
+    }
+    .brand {
+      font-size: 20px; font-weight: 850; letter-spacing: .11em;
+    }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 26px; }
+    .nav-links a {
+      color: var(--muted); font-size: 13px;
+      transition: color .2s ease;
+    }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--accent); }
+    .nav-cta {
+      padding: 9px 15px; border: 1px solid rgba(101,226,194,.55);
+      border-radius: 5px; color: var(--accent) !important;
+    }
+    .menu-toggle {
+      display: none; background: transparent; border: 1px solid var(--line);
+      border-radius: 7px; padding: 9px 12px; cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative; min-height: 690px;
+      display: grid; grid-template-columns: 1.16fr .84fr;
+      align-items: center; gap: 6%;
+      padding-block: 88px; isolation: isolate;
+    }
+    .hero::before {
+      content: ""; position: absolute; z-index: -1; pointer-events: none;
+      width: 530px; height: 530px; right: 0; top: 6%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(101,226,194,.13), transparent 68%);
+      animation: glow 7s ease-in-out infinite alternate;
+    }
+    .eyebrow {
+      color: var(--accent); font-size: 11px; font-weight: 800;
+      letter-spacing: .22em; text-transform: uppercase;
+    }
+    h1 {
+      margin: 20px 0 18px; max-width: 760px;
+      font-size: clamp(48px, 7.6vw, 92px);
+      line-height: .99; letter-spacing: -.065em;
+    }
+    h1 .name { color: var(--accent); }
+    .typed-line {
+      display: block; min-height: 1.2em; margin-top: 12px;
+      color: var(--muted); font-size: clamp(19px, 3vw, 28px);
+      font-weight: 500; letter-spacing: -.025em;
+    }
+    .cursor {
+      display: inline-block; width: 2px; height: 1em;
+      margin-left: 4px; vertical-align: -.12em; background: var(--accent);
+      animation: blink .8s steps(2, start) infinite;
+    }
+    .hero-description { max-width: 570px; color: var(--muted); font-size: 17px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
+    .button {
+      min-height: 48px; display: inline-flex; justify-content: center;
+      align-items: center; gap: 9px; padding: 12px 19px;
+      border: 1px solid var(--accent); border-radius: 5px;
+      background: var(--accent); color: var(--bg);
+      font-size: 13px; font-weight: 800;
+      transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+    }
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(101,226,194,.14);
+      background: #8af0d7;
+    }
+    .button.ghost { color: var(--text); background: transparent; border-color: var(--line); }
+    .button.ghost:hover { color: var(--accent); border-color: var(--accent); box-shadow: none; }
+
+    /* Empty image slot: add your own image later */
+    .image-slot {
+      min-height: 430px; position: relative; overflow: hidden;
+      display: grid; place-items: center;
+      border: 1px dashed rgba(101,226,194,.48);
+      border-radius: 190px 190px 18px 18px;
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(101,226,194,.1), transparent 55%),
+        linear-gradient(155deg, #21384c, #142338 66%, #14343a);
+    }
+    .image-slot::before, .image-slot::after {
+      content: ""; position: absolute; border: 1px solid rgba(101,226,194,.12);
+      border-radius: 50%; width: 75%; aspect-ratio: 1;
+    }
+    .image-slot::after { width: 92%; }
+    .image-slot span {
+      z-index: 1; color: rgba(244,242,235,.44);
+      font-size: 12px; letter-spacing: .08em; text-align: center; padding: 20px;
+    }
+    /* To add an image later, replace the slot content with:
+       <img src="YOUR-IMAGE-URL" alt="Anis Khan" class="slot-image"> */
+    .slot-image { width: 100%; height: 100%; min-height: 430px; position: absolute; inset: 0; object-fit: cover; }
+
+    /* Moving skills strip */
+    .marquee { overflow: hidden; border-block: 1px solid var(--line); }
+    .marquee-track {
+      display: flex; width: max-content; gap: 34px;
+      padding: 16px 0; color: var(--accent);
+      font-size: 11px; font-weight: 800; letter-spacing: .17em;
+      animation: marquee 28s linear infinite;
+    }
+    .marquee-track span::after { content: "✦"; margin-left: 34px; color: var(--text); }
+
+    /* Sections and typography */
+    section { padding-block: 94px; border-bottom: 1px solid var(--line); }
+    .section-heading { max-width: 720px; margin-bottom: 38px; }
+    h2 {
+      margin: 10px 0 16px; font-size: clamp(34px, 5.4vw, 60px);
+      line-height: 1.04; letter-spacing: -.055em;
+    }
+    h3 { line-height: 1.25; }
+    .lead { color: var(--muted); font-size: 16px; max-width: 680px; }
+    .accent { color: var(--accent); }
+    .muted { color: var(--muted); }
+
+    /* About */
+    .about-grid {
+      display: grid; grid-template-columns: .72fr 1.28fr;
+      align-items: start; gap: 7%;
+    }
+    .about-stamp {
+      font-size: clamp(62px, 10vw, 120px); font-weight: 900;
+      line-height: .82; letter-spacing: -.09em; color: var(--accent);
+    }
+    .about-copy p { color: var(--muted); }
+    .about-copy p:first-of-type { color: var(--text); font-size: 19px; }
+    .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 27px; }
+    .fact { padding: 17px; border: 1px solid var(--line); border-radius: 9px; background: rgba(255,255,255,.025); }
+    .fact strong { display: block; color: var(--accent); font-size: 15px; }
+    .fact span { color: var(--muted); font-size: 12px; }
+
+    /* Skills */
+    .skill-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .skill {
+      display: flex; align-items: center; gap: 12px;
+      min-height: 62px; padding: 15px 17px;
+      border: 1px solid var(--line); border-radius: 8px;
+      background: rgba(255,255,255,.025); transition: border-color .2s, transform .2s;
+    }
+    .skill:hover { border-color: rgba(101,226,194,.65); transform: translateY(-2px); }
+    .skill-mark { color: var(--accent); font-size: 18px; }
+
+    /* Services */
+    .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; }
+    .service-card {
+      min-height: 205px; padding: 22px;
+      border: 1px solid var(--line); border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(255,255,255,.04), rgba(255,255,255,.012));
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-5px); border-color: rgba(101,226,194,.55);
+      background: linear-gradient(145deg, rgba(101,226,194,.09), rgba(255,255,255,.015));
+    }
+    .service-icon { color: var(--accent); font-size: 23px; }
+    .service-card h3 { margin: 13px 0 7px; font-size: 17px; }
+    .service-card p { color: var(--muted); font-size: 13px; margin: 0; }
+
+    /* Project image placeholders */
+    .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .project-card {
+      overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius);
+      background: var(--bg-soft); transition: transform .25s, border-color .25s;
+    }
+    .project-card:hover { transform: translateY(-5px); border-color: rgba(101,226,194,.58); }
+    .project-image-slot {
+      min-height: 250px; display: grid; place-items: center;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(135deg, #20394b, #16273a 60%, #18363b);
+      color: rgba(244,242,235,.42); font-size: 12px; letter-spacing: .1em;
+    }
+    .project-info { padding: 21px; }
+    .project-info h3 { margin: 0 0 8px; }
+    .project-info p { margin: 0; color: var(--muted); font-size: 14px; }
+    .content-note {
+      margin-top: 18px; padding: 13px 16px;
+      border-left: 2px solid var(--accent); color: var(--muted); font-size: 13px;
+    }
+
+    /* Blog topics */
+    .topic-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; }
+    .topic-card {
+      min-height: 175px; padding: 20px;
+      border: 1px solid var(--line); border-radius: 10px;
+      background: rgba(255,255,255,.025);
+      transition: transform .2s ease, border-color .2s ease;
+    }
+    .topic-card:hover { transform: translateY(-4px); border-color: rgba(101,226,194,.55); }
+    .topic-card h3 { margin: 0 0 9px; }
+    .topic-card p { margin: 0; color: var(--muted); font-size: 13px; }
+
+    /* CTA */
+    .cta-panel {
+      padding: clamp(28px, 6vw, 62px);
+      display: flex; align-items: center; justify-content: space-between; gap: 25px;
+      border: 1px solid rgba(101,226,194,.26); border-radius: 16px;
+      background:
+        radial-gradient(ellipse at 90% 20%, rgba(101,226,194,.14), transparent 45%),
+        linear-gradient(115deg, #1a3046, #17353d);
+    }
+    .cta-panel h2 { max-width: 680px; margin-bottom: 8px; }
+    .cta-panel p { color: var(--muted); margin-bottom: 0; }
+
+    /* Contact */
+    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 6%; }
+    .contact-details { display: grid; gap: 12px; margin-top: 24px; }
+    .contact-item { padding: 15px; border: 1px solid var(--line); border-radius: 8px; }
+    .contact-item small {
+      display: block; margin-bottom: 3px; color: var(--accent);
+      text-transform: uppercase; letter-spacing: .13em; font-size: 10px;
+    }
+    .contact-item a:hover { color: var(--accent); }
+    .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+    .field { display: grid; gap: 7px; color: var(--muted); font-size: 12px; }
+    .field.full { grid-column: 1 / -1; }
+    .field input, .field select, .field textarea {
+      width: 100%; padding: 13px 14px; border: 1px solid var(--line);
+      border-radius: 7px; background: var(--bg-soft); color: var(--text);
+      outline: none;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent); }
+    .field textarea { min-height: 130px; resize: vertical; }
+    .form-note { color: var(--muted); font-size: 12px; }
+
+    footer { padding: 27px 0; color: var(--muted); font-size: 12px; }
+    .footer-row { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    .back-top:hover { color: var(--accent); }
+
+    /* Motion */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
+    }
+    .reveal.is-visible { opacity: 1; transform: none; }
+    .delay-1 { transition-delay: .08s; }
+    .delay-2 { transition-delay: .16s; }
+    .delay-3 { transition-delay: .24s; }
+    @keyframes blink { to { visibility: hidden; } }
+    @keyframes glow { to { transform: translate(-18px, 16px) scale(1.08); opacity: .72; } }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    @media (max-width: 930px) {
+      .service-grid, .topic-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero { min-height: 610px; gap: 4%; }
+      .image-slot { min-height: 370px; }
+      .slot-image { min-height: 370px; }
+    }
+    @media (max-width: 700px) {
+      .nav { min-height: 67px; }
+      .menu-toggle { display: block; }
+      .nav-links {
+        display: none; position: absolute; inset: 67px 0 auto;
+        padding: 12px 5% 20px; background: var(--bg);
+        border-bottom: 1px solid var(--line);
+        flex-direction: column; align-items: stretch; gap: 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 11px 0; }
+      .nav-cta { text-align: center; margin-top: 7px; }
+      .hero { grid-template-columns: 1fr; padding-block: 64px; min-height: auto; }
+      .hero-copy { font-size: 16px; }
+      .image-slot { min-height: 320px; width: min(100%, 440px); margin: 0 auto; }
+      .slot-image { min-height: 320px; }
+      section { padding-block: 68px; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+      .about-stamp { font-size: 66px; }
+      .skill-list { grid-template-columns: repeat(2, 1fr); }
+      .facts { grid-template-columns: 1fr; }
+      .cta-panel { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 480px) {
+      .service-grid, .topic-grid, .project-grid, .skill-list { grid-template-columns: 1fr; }
+      .contact-form { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .actions .button { width: 100%; }
+      h1 { font-size: 52px; }
+      .project-image-slot { min-height: 200px; }
     }
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      *, *::before, *::after {
+        scroll-behavior: auto !important; animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important; transition-duration: .01ms !important;
+      }
       .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
+
 <body>
-  <header class="topbar">
-    <nav class="nav wrap" aria-label="Main navigation">
-      <a class="brand" href="#home" aria-label="Anis Khan home">AK<span>.</span></a>
-      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navlinks">☰</button>
-      <div class="navlinks" id="navlinks">
-        <a href="#work">Work</a>
-        <a href="#services">Services</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Anis Khan home">ANIS<span>.</span></a>
+      <button class="menu-toggle" type="button" aria-controls="nav-links"
+              aria-expanded="false" aria-label="Open navigation menu">Menu</button>
+      <nav class="nav-links" id="nav-links" aria-label="Main navigation">
         <a href="#about">About</a>
-        <a class="pill" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
-      </div>
-    </nav>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#work">Projects</a>
+        <a href="#blog">Blog</a>
+        <a class="nav-cta" href="#contact">Let’s talk ↗</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="hero wrap" id="home">
-      <div class="reveal">
-        <div class="eyebrow">Digital marketing · Web design</div>
-        <!-- Replace this headline and introduction with your preferred wording. -->
-        <h1>Ideas into<br><em>digital impact.</em></h1>
-        <p class="intro">I’m Anis Khan, a digital marketer and web designer. I help businesses strengthen their online presence with thoughtful marketing and modern, responsive websites.</p>
+  <main id="main">
+    <section class="container hero" id="home">
+      <div class="hero-content reveal">
+        <div class="eyebrow">Digital marketer · Web designer</div>
+        <h1>Hi, I’m<br><span class="name">Anis Khan.</span></h1>
+        <div class="typed-line">
+          <span id="typed-text" aria-label="Digital Marketer and Web Designer"></span><span class="cursor" aria-hidden="true"></span>
+        </div>
+        <p class="hero-description">
+          I help businesses build a stronger online presence through digital marketing,
+          modern web design, and thoughtful digital solutions.
+        </p>
         <div class="actions">
-          <a class="button primary" href="#work">View my work <span aria-hidden="true">↓</span></a>
           <a class="button" href="#contact">Let’s work together <span aria-hidden="true">↗</span></a>
+          <a class="button ghost" href="#work">Explore my work</a>
         </div>
       </div>
-      <aside class="hero-note reveal">
-        <strong>Strategy meets design.</strong>
-        Digital solutions shaped around your brand, your audience, and your goals.
-      </aside>
+
+      <!-- নিজের ছবি যোগ করতে এই div-এর ভেতরে img বসান:
+           <img class="slot-image" src="আপনার-ছবির-URL" alt="Anis Khan">
+      -->
+      <div class="image-slot reveal delay-2" role="img" aria-label="Profile photo placeholder">
+        <span>PROFILE PHOTO<br>ADD YOUR IMAGE HERE</span>
+      </div>
     </section>
 
-    <section class="wrap" id="work">
-      <div class="section-head reveal">
-        <div><div class="eyebrow">A selection</div><h2>Selected work</h2></div>
-        <p>Project images and descriptions weren’t available in the accessible source content. Add verified work here when ready.</p>
+    <div class="marquee" aria-label="Areas of expertise">
+      <div class="marquee-track" aria-hidden="true">
+        <span>Digital Marketing</span><span>Web Design</span><span>WordPress</span>
+        <span>Social Media</span><span>SEO</span><span>Video Editing</span>
+        <span>Digital Marketing</span><span>Web Design</span><span>WordPress</span>
+        <span>Social Media</span><span>SEO</span><span>Video Editing</span>
       </div>
-      <!-- Replace this honest placeholder with genuine portfolio items and image URLs.
-           For each project, add a figure with an img, title, category, and real description. -->
-      <div class="work reveal">
-        <div class="work-empty">
-          <div>
-            <h3>Your next standout project belongs here.</h3>
-            <p>This section is intentionally free of invented client work. Replace it with real project screenshots, titles, categories, and descriptions. Use descriptive alt text and loading="lazy" on project images.</p>
-          </div>
-          <div class="work-mark" aria-hidden="true">✳</div>
+    </div>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="reveal">
+          <div class="eyebrow">A little about me</div>
+          <div class="about-stamp">ABOUT<br>ME<span class="accent">.</span></div>
         </div>
-      </div>
-    </section>
-
-    <section class="wrap" id="services">
-      <div class="section-head reveal">
-        <div><div class="eyebrow">How I can help</div><h2>Services</h2></div>
-        <p>Practical creative and digital support to help your business show up online.</p>
-      </div>
-      <div class="service-grid">
-        <article class="service reveal"><span class="num">01</span><h3>Digital marketing</h3><p>Marketing strategies and social campaigns to build visibility and reach your audience.</p></article>
-        <article class="service reveal"><span class="num">02</span><h3>Social media</h3><p>Thoughtful social media marketing to grow your presence and engage your community.</p></article>
-        <article class="service reveal"><span class="num">03</span><h3>Video editing</h3><p>Engaging video content for social platforms, advertising, and online marketing.</p></article>
-        <article class="service reveal"><span class="num">04</span><h3>Canva design</h3><p>Clean visual designs for brands, social media, and marketing campaigns.</p></article>
-        <article class="service reveal"><span class="num">05</span><h3>Landing pages</h3><p>Focused landing-page design built to support leads, sales, and business goals.</p></article>
-        <article class="service reveal"><span class="num">06</span><h3>Shopify</h3><p>Professional Shopify store design and customization for a smooth shopping experience.</p></article>
-        <article class="service reveal"><span class="num">07</span><h3>Web design</h3><p>Modern, responsive websites designed to work across devices and screen sizes.</p></article>
-        <article class="service reveal"><span class="num">08</span><h3>SEO</h3><p>Search optimization to help people discover your business organically.</p></article>
-      </div>
-    </section>
-
-    <section class="about" id="about">
-      <div class="about-inner wrap">
-        <div class="reveal"><div class="eyebrow">A little about me</div><h2>Digital, with purpose.</h2></div>
-        <div class="about-copy reveal">
-          <p>I’m Anis Khan, a digital marketer and web designer passionate about helping businesses grow. I create strategies that strengthen online presence and brand visibility, alongside modern, responsive WordPress websites designed to support marketing goals.</p>
-          <p>My work spans digital and social media marketing, web design, video editing, visual design, landing pages, Shopify, and SEO.</p>
-          <div class="skills" aria-label="Skills">
-            <span>Facebook Ads</span><span>Digital marketing</span><span>Web design</span>
-            <span>WordPress</span><span>Video editing</span><span>Landing pages</span>
-            <span>SEO</span><span>Product design</span>
+        <div class="about-copy reveal delay-1">
+          <h2>Helping brands grow in the <span class="accent">digital world.</span></h2>
+          <p>
+            I’m Anis Khan, a Digital Marketer and Web Designer. I’m passionate about
+            helping businesses improve their online presence and connect with their audience.
+          </p>
+          <p>
+            My work brings together digital marketing and website design—from social media
+            and SEO to modern WordPress websites, landing pages, and Shopify stores.
+          </p>
+          <div class="facts">
+            <div class="fact"><strong>Digital Marketing</strong><span>Marketing &amp; online growth</span></div>
+            <div class="fact"><strong>Web Design</strong><span>Responsive website experiences</span></div>
+            <div class="fact"><strong>WordPress</strong><span>Website design &amp; development</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="contact wrap" id="contact">
-      <div class="contact-box reveal">
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">What I do</div>
+          <h2>Skills &amp; <span class="accent">expertise</span></h2>
+          <p class="lead">A combination of marketing, design, and digital production skills.</p>
+        </div>
+        <div class="skill-list">
+          <div class="skill reveal"><span class="skill-mark">✦</span>Facebook Ads</div>
+          <div class="skill reveal delay-1"><span class="skill-mark">✦</span>Email Marketing</div>
+          <div class="skill reveal delay-2"><span class="skill-mark">✦</span>Product Design</div>
+          <div class="skill reveal"><span class="skill-mark">✦</span>Video Editing</div>
+          <div class="skill reveal delay-1"><span class="skill-mark">✦</span>SEO</div>
+          <div class="skill reveal delay-2"><span class="skill-mark">✦</span>WordPress</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">How I can help</div>
+          <h2>Services for your <span class="accent">next step.</span></h2>
+          <p class="lead">Practical digital services to help businesses build and improve their online presence.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal"><div class="service-icon">↗</div><h3>Digital Marketing</h3><p>Digital marketing support to improve visibility and connect with your audience.</p></article>
+          <article class="service-card reveal delay-1"><div class="service-icon">◎</div><h3>Social Media Marketing</h3><p>Social media strategy and campaign support for your business.</p></article>
+          <article class="service-card reveal delay-2"><div class="service-icon">▶</div><h3>Video Editing</h3><p>Video editing for digital content, marketing, and social platforms.</p></article>
+          <article class="service-card reveal delay-3"><div class="service-icon">✳</div><h3>Canva Design</h3><p>Visual design assets for brands, social content, and campaigns.</p></article>
+          <article class="service-card reveal"><div class="service-icon">▱</div><h3>Landing Page Design</h3><p>Focused landing pages for presenting products, services, or campaigns.</p></article>
+          <article class="service-card reveal delay-1"><div class="service-icon">◈</div><h3>Shopify</h3><p>Shopify store design and setup for online businesses.</p></article>
+          <article class="service-card reveal delay-2"><div class="service-icon">⌘</div><h3>Web Design</h3><p>Modern, responsive websites designed for desktop and mobile.</p></article>
+          <article class="service-card reveal delay-3"><div class="service-icon">⌕</div><h3>SEO</h3><p>Search engine optimization to support organic visibility.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container cta-panel reveal">
         <div>
           <div class="eyebrow">Have a project in mind?</div>
-          <h2>Let’s make something meaningful.</h2>
-          <p>Get in touch to talk about your project, your website, or growing your business online.</p>
+          <h2>Let’s build your <span class="accent">online presence.</span></h2>
+          <p>Tell me what you’re working on and what you want to achieve.</p>
+        </div>
+        <a class="button" href="#contact">Get in touch ↗</a>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Selected work</div>
+          <h2>Projects &amp; <span class="accent">portfolio.</span></h2>
+          <p class="lead">A place to showcase project work, design examples, and marketing campaigns.</p>
+        </div>
+
+        <!-- ছবি/প্রজেক্ট যোগ করতে slot-এর ভেতরে img বসান এবং নিচের তথ্য সম্পাদনা করুন। -->
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <div class="project-image-slot">PROJECT IMAGE — ADD YOUR IMAGE</div>
+            <div class="project-info"><h3>Project title</h3><p>এখানে আপনার বাস্তব project-এর সংক্ষিপ্ত বিবরণ লিখুন।</p></div>
+          </article>
+          <article class="project-card reveal delay-1">
+            <div class="project-image-slot">PROJECT IMAGE — ADD YOUR IMAGE</div>
+            <div class="project-info"><h3>Project title</h3><p>এখানে আপনার বাস্তব project-এর সংক্ষিপ্ত বিবরণ লিখুন।</p></div>
+          </article>
+        </div>
+        <p class="content-note">Source website-এ project-এর বিস্তারিত নাম, ছবি ও link-এর তথ্য পাওয়া যায়নি। তাই এই অংশগুলো নিজের যাচাই করা project তথ্য দিয়ে বদলে নেবেন।</p>
+      </div>
+    </section>
+
+    <section id="blog">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Ideas &amp; insights</div>
+          <h2>Topics I <span class="accent">write about.</span></h2>
+          <p class="lead">Digital topics around web design, WordPress, marketing, and useful tools.</p>
+        </div>
+        <div class="topic-grid">
+          <article class="topic-card reveal"><h3>WordPress</h3><p>Websites, tools, and practical ideas for working with WordPress.</p></article>
+          <article class="topic-card reveal delay-1"><h3>Web Design</h3><p>Design principles for clear, responsive, user-friendly websites.</p></article>
+          <article class="topic-card reveal delay-2"><h3>Digital Marketing</h3><p>Marketing ideas for building a stronger online presence.</p></article>
+          <article class="topic-card reveal delay-3"><h3>AI Tools</h3><p>Useful AI tools and ways they can support digital work.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-grid">
+        <div class="reveal">
+          <div class="eyebrow">Contact</div>
+          <h2>Let’s talk about your <span class="accent">project.</span></h2>
+          <p class="lead">Have a question or want to discuss a project? Get in touch.</p>
           <div class="contact-details">
-            <!-- Update contact details or social links here if they change. -->
-            <a href="mailto:anisdevoloper@gmail.com">anisdevoloper@gmail.com</a>
-            <a href="tel:+8801811227735">+880 1811-227735</a>
-            <a href="https://facebook.com/aniskhanmarketer" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+            <div class="contact-item"><small>Email</small><a href="mailto:anisdevoloper@gmail.com">anisdevoloper@gmail.com</a></div>
+            <div class="contact-item"><small>WhatsApp</small><a href="https://wa.me/8801811227735">+880 1811 227735</a></div>
+            <div class="contact-item"><small>Location</small><span>Lalpur, Natore, Bangladesh</span></div>
           </div>
         </div>
-        <a class="button" href="mailto:anisdevoloper@gmail.com">Start a conversation <span aria-hidden="true">↗</span></a>
+
+        <div class="reveal delay-1">
+          <form class="contact-form" id="contact-form">
+            <label class="field">Name
+              <input name="name" autocomplete="name" required>
+            </label>
+            <label class="field">Email
+              <input name="email" type="email" autocomplete="email" required>
+            </label>
+            <label class="field full">Subject
+              <select name="subject">
+                <option>Digital Marketing</option>
+                <option>Web Design</option>
+                <option>Problem Solve</option>
+                <option>Others</option>
+              </select>
+            </label>
+            <label class="field full">Message
+              <textarea name="message" required></textarea>
+            </label>
+            <button class="button full" type="submit">Send via email ↗</button>
+          </form>
+          <p class="form-note">ফর্মটি আপনার email app-এ message তৈরি করবে; এটি server-এ submit করে না।</p>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="wrap">
-    <span>© <span id="year"></span> Anis Khan</span>
-    <span>Digital marketer & web designer · <a href="#home">Back to top ↑</a></span>
+  <footer>
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Anis Khan</span>
+      <a class="back-top" href="#home">Back to top ↑</a>
+    </div>
   </footer>
 
   <script>
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector("#navlinks");
+    // Typing animation
+    const typedTarget = document.querySelector("#typed-text");
+    const phrases = ["Digital Marketer", "Web Designer", "WordPress Specialist"];
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    toggle.addEventListener("click", () => {
+    if (reduceMotion) {
+      typedTarget.textContent = phrases[0];
+    } else {
+      let phraseIndex = 0;
+      let letterIndex = 0;
+      let deleting = false;
+
+      function typeNext() {
+        const phrase = phrases[phraseIndex];
+        typedTarget.textContent = phrase.slice(0, letterIndex);
+
+        if (!deleting && letterIndex < phrase.length) {
+          letterIndex++;
+          setTimeout(typeNext, 85);
+        } else if (!deleting) {
+          deleting = true;
+          setTimeout(typeNext, 1200);
+        } else if (letterIndex > 0) {
+          letterIndex--;
+          setTimeout(typeNext, 42);
+        } else {
+          deleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          setTimeout(typeNext, 280);
+        }
+      }
+      typeNext();
+    }
+
+    // Mobile navigation
+    const menuButton = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav-links");
+
+    menuButton.addEventListener("click", () => {
       const open = nav.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", String(open));
-      toggle.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
-      toggle.textContent = open ? "×" : "☰";
+      menuButton.setAttribute("aria-expanded", String(open));
+      menuButton.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
     });
 
-    nav.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
+    nav.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
         nav.classList.remove("open");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Open navigation menu");
-        toggle.textContent = "☰";
-      });
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation menu");
+      }
     });
 
-    document.querySelector("#year").textContent = new Date().getFullYear();
-
-    // Reveal content as it enters view; show everything if the browser lacks support.
-    const items = document.querySelectorAll(".reveal");
-    if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
+    // Scroll reveal; reduced-motion preference reveals everything immediately.
+    const revealElements = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window && !reduceMotion) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
+            entry.target.classList.add("is-visible");
+            obs.unobserve(entry.target);
           }
         });
       }, { threshold: 0.12 });
-      items.forEach(item => observer.observe(item));
+      revealElements.forEach((element) => observer.observe(element));
     } else {
-      items.forEach(item => item.classList.add("visible"));
+      revealElements.forEach((element) => element.classList.add("is-visible"));
     }
+
+    // Contact form opens an email draft; no backend is configured.
+    document.querySelector("#contact-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      const subject = encodeURIComponent(data.get("subject"));
+      const body = encodeURIComponent(
+        `Name: ${data.get("name")}\nEmail: ${data.get("email")}\n\n${data.get("message")}`
+      );
+      window.location.href =
+        `mailto:anisdevoloper@gmail.com?subject=${subject}&body=${body}`;
+    });
+
+    document.querySelector("#year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
