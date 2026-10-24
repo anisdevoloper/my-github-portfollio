@@ -3,794 +3,269 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f1e8">
-  <meta name="description" content="Anis Khan is a digital marketer, AI creative specialist, and web designer creating campaigns, product visuals, and websites.">
+  <meta name="theme-color" content="#f6f3ec">
+  <meta name="description" content="Anis Khan — digital marketer and web designer creating digital experiences, marketing campaigns, and responsive websites.">
+  <meta property="og:title" content="Anis Khan — Digital Marketer & Web Designer">
+  <meta property="og:description" content="Digital marketing, creative advertising, and modern web design.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Anis Khan — Digital Marketer & Creative Specialist">
-  <meta property="og:description" content="Digital marketing, AI product videos, and web design for growing brands.">
-  <title>Anis Khan — Digital Marketer & Creative Specialist</title>
-
+  <title>Anis Khan — Digital Marketer & Web Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    /* Customize the complete palette here. */
     :root {
-      --paper: #f5f1e8;
-      --paper-deep: #eae4d8;
-      --ink: #17231f;
-      --muted: #66716b;
-      --line: #d7d0c3;
-      --accent: #e35436;
-      --accent-dark: #b63c25;
-      --white: #fffdf8;
-      --serif: Georgia, "Times New Roman", serif;
-      --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      --content: 1160px;
-      --radius: 5px;
+      --paper: #f6f3ec;
+      --ink: #17201d;
+      --muted: #69716b;
+      --line: #d9d8cf;
+      --accent: #f05b35;
+      --soft: #e9e7dd;
+      --font: "DM Sans", sans-serif;
+      --display: "Manrope", sans-serif;
+      --page: 1160px;
     }
-
-    *, *::before, *::after { box-sizing: border-box; }
+    * { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 88px; }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--sans);
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    body.modal-open { overflow: hidden; }
-    a { color: inherit; }
-    button, a { -webkit-tap-highlight-color: transparent; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); }
+    a { color: inherit; text-decoration: none; }
     button { font: inherit; }
-    img { display: block; max-width: 100%; }
-    .wrap { width: min(var(--content), calc(100% - 48px)); margin-inline: auto; }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--accent-dark);
-      font-size: .72rem;
-      font-weight: 750;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-    .eyebrow::before { content: ""; width: 22px; height: 1px; background: currentColor; }
-    .section { padding: 104px 0; }
-    .section-heading {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 42px;
-    }
-    h1, h2, h3, p { margin-top: 0; }
-    h1, h2, h3 { line-height: 1.04; }
-    h1, h2 { font-family: var(--serif); font-weight: 400; letter-spacing: -.045em; }
-    h1 { font-size: clamp(3.6rem, 8vw, 7.4rem); }
-    h2 { font-size: clamp(2.6rem, 5.3vw, 5rem); margin-bottom: 0; }
-    .section-intro { max-width: 430px; color: var(--muted); margin-bottom: 4px; }
-    .button {
-      min-height: 48px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 11px;
-      padding: 12px 20px;
-      border: 1px solid var(--ink);
-      border-radius: 2px;
-      color: var(--ink);
-      text-decoration: none;
-      font-size: .84rem;
-      font-weight: 700;
-      transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
-      cursor: pointer;
-    }
-    .button:hover { background: var(--ink); color: var(--white); transform: translateY(-2px); }
-    .button-primary { border-color: var(--accent); background: var(--accent); color: #fff; }
-    .button-primary:hover { border-color: var(--accent-dark); background: var(--accent-dark); color: #fff; }
-    .button-arrow { font-size: 1.15rem; line-height: 1; }
     :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
-
-    /* Header and responsive navigation */
-    .site-header {
-      position: sticky;
-      z-index: 20;
-      top: 0;
-      background: rgba(245, 241, 232, .94);
-      border-bottom: 1px solid rgba(23, 35, 31, .12);
-      backdrop-filter: blur(12px);
+    .wrap { width: min(var(--page), calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow { color: var(--accent); font-size: .75rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+    .topbar { position: sticky; z-index: 10; top: 0; border-bottom: 1px solid #d9d8cfb3; background: #f6f3ecee; backdrop-filter: blur(12px); }
+    .nav { height: 76px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { font-family: var(--display); font-weight: 800; letter-spacing: -.06em; font-size: 1.2rem; }
+    .brand span { color: var(--accent); }
+    .navlinks { display: flex; gap: 30px; align-items: center; font-size: .88rem; }
+    .navlinks a:not(.pill) { position: relative; padding-block: 8px; }
+    .navlinks a:not(.pill)::after { content: ""; position: absolute; bottom: 2px; left: 0; width: 100%; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: right; transition: transform .25s; }
+    .navlinks a:hover::after { transform: scaleX(1); transform-origin: left; }
+    .pill, .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 1px solid var(--ink); border-radius: 99px; padding: 12px 18px; font-size: .87rem; font-weight: 600; transition: background .2s, color .2s, transform .2s; }
+    .pill:hover, .button:hover { transform: translateY(-2px); background: var(--ink); color: white; }
+    .button.primary { background: var(--accent); border-color: var(--accent); color: white; }
+    .button.primary:hover { background: var(--ink); border-color: var(--ink); }
+    .menu-toggle { display: none; border: 1px solid var(--line); border-radius: 50%; width: 44px; height: 44px; color: var(--ink); background: transparent; cursor: pointer; }
+    .hero { min-height: 660px; display: grid; grid-template-columns: 1.25fr .75fr; align-items: center; gap: 40px; padding-block: 74px 86px; position: relative; overflow: hidden; }
+    .hero::after { content: ""; position: absolute; width: 370px; height: 370px; border: 1px solid var(--line); border-radius: 50%; right: 2%; top: 13%; z-index: -1; box-shadow: 0 0 0 35px #f6f3ec, 0 0 0 36px var(--line), 0 0 0 88px #f6f3ec, 0 0 0 89px var(--line); opacity: .55; animation: drift 16s ease-in-out infinite alternate; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 800px; margin-bottom: 24px; font: 700 clamp(3.4rem, 8vw, 7rem)/.98 var(--display); letter-spacing: -.085em; }
+    h1 em { color: var(--accent); font-style: normal; }
+    .intro { max-width: 510px; color: var(--muted); line-height: 1.8; font-size: 1.05rem; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+    .hero-note { justify-self: end; align-self: end; max-width: 230px; padding: 0 0 8px 17px; border-left: 2px solid var(--accent); color: var(--muted); font-size: .85rem; line-height: 1.6; }
+    .hero-note strong { display: block; color: var(--ink); font-size: .95rem; margin-bottom: 4px; }
+    section { padding-block: 100px; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 38px; }
+    h2 { margin: 8px 0 0; font: 700 clamp(2.5rem, 5vw, 4.4rem)/1 var(--display); letter-spacing: -.075em; }
+    .section-head p { max-width: 330px; margin: 0; color: var(--muted); line-height: 1.7; }
+    .work { border-top: 1px solid var(--line); }
+    .work-empty { min-height: 260px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 25px; padding: 40px; background: var(--soft); }
+    .work-empty h3 { max-width: 580px; margin: 0 0 10px; font: 600 clamp(1.5rem, 3vw, 2.35rem)/1.15 var(--display); letter-spacing: -.05em; }
+    .work-empty p { max-width: 600px; margin: 0; color: var(--muted); line-height: 1.7; }
+    .work-mark { display: grid; place-items: center; width: 86px; height: 86px; border-radius: 50%; background: var(--accent); color: white; font-size: 2rem; }
+    .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .service { min-height: 175px; padding: 23px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background .2s; }
+    .service:hover { background: var(--soft); }
+    .service .num { display: block; color: var(--accent); font-size: .75rem; margin-bottom: 28px; }
+    .service h3 { margin: 0 0 8px; font: 600 1.05rem var(--display); }
+    .service p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.6; }
+    .about { background: var(--ink); color: var(--paper); }
+    .about-inner { display: grid; grid-template-columns: .75fr 1.25fr; gap: 70px; align-items: start; }
+    .about h2 { max-width: 380px; }
+    .about .eyebrow { color: #ff8968; }
+    .about-copy { color: #c6cbc5; line-height: 1.85; font-size: 1.04rem; }
+    .about-copy p { margin-bottom: 20px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 25px; }
+    .skills span { padding: 9px 13px; border: 1px solid #48524c; border-radius: 99px; color: #f6f3ec; font-size: .82rem; }
+    .contact { padding-block: 100px 70px; }
+    .contact-box { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 30px; padding: clamp(28px, 6vw, 70px); background: var(--accent); color: white; }
+    .contact-box .eyebrow { color: #ffe2d8; }
+    .contact-box h2 { max-width: 700px; margin-bottom: 14px; }
+    .contact-box p { max-width: 500px; margin-bottom: 0; line-height: 1.7; color: #fff0e9; }
+    .contact-box .button { background: white; border-color: white; color: var(--ink); white-space: nowrap; }
+    .contact-box .button:hover { background: var(--ink); border-color: var(--ink); color: white; }
+    .contact-details { display: flex; flex-wrap: wrap; gap: 15px 30px; margin-top: 25px; font-size: .9rem; }
+    .contact-details a { text-decoration: underline; text-underline-offset: 4px; }
+    footer { padding: 25px 0 32px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: .82rem; }
+    footer a { color: var(--ink); }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @keyframes drift { to { transform: translate(-12px, 14px) rotate(8deg); } }
+    @media (max-width: 800px) {
+      .hero { min-height: auto; grid-template-columns: 1fr; padding-block: 85px 60px; }
+      .hero::after { width: 230px; height: 230px; right: -60px; top: 8%; }
+      .hero-note { justify-self: start; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-inner { grid-template-columns: 1fr; gap: 28px; }
+      .contact-box { grid-template-columns: 1fr; align-items: start; }
+      .section-head { align-items: start; flex-direction: column; }
     }
-    .nav-row { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .wordmark { text-decoration: none; font-size: 1.02rem; font-weight: 800; letter-spacing: -.04em; white-space: nowrap; }
-    .wordmark span { color: var(--accent); }
-    .nav-links { display: flex; align-items: center; gap: clamp(13px, 2vw, 27px); }
-    .nav-links a {
-      color: #39443e;
-      text-decoration: none;
-      font-size: .77rem;
-      font-weight: 650;
-      transition: color .2s ease;
-    }
-    .nav-links a:hover { color: var(--accent-dark); }
-    .nav-cta { padding: 9px 14px; border: 1px solid var(--ink); border-radius: 2px; }
-    .menu-toggle {
-      display: none;
-      min-width: 44px;
-      min-height: 44px;
-      border: 1px solid var(--line);
-      background: transparent;
-      color: var(--ink);
-      cursor: pointer;
-    }
-
-    /* Hero */
-    .hero { padding: 75px 0 82px; overflow: hidden; }
-    .hero-grid { display: grid; grid-template-columns: 1.04fr .96fr; align-items: center; gap: 5.4%; }
-    .hero-copy { position: relative; z-index: 1; }
-    .hero h1 { margin: 23px 0 20px; max-width: 700px; }
-    .hero h1 em { color: var(--accent); font-style: normal; }
-    .hero-lede { max-width: 510px; color: var(--muted); font-size: 1.05rem; margin-bottom: 28px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .hero-note { display: flex; align-items: center; gap: 9px; margin-top: 31px; color: var(--muted); font-size: .78rem; }
-    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #6c8f62; box-shadow: 0 0 0 4px rgba(108, 143, 98, .13); }
-    .hero-art {
-      position: relative;
-      min-height: 495px;
-      overflow: hidden;
-      background: #d9a28b;
-      isolation: isolate;
-    }
-    .hero-art::before {
-      content: "";
-      position: absolute;
-      width: 67%;
-      aspect-ratio: 1;
-      left: 17%;
-      top: 12%;
-      border-radius: 50%;
-      background: #f1cbb0;
-    }
-    .hero-art::after {
-      content: "IDEAS → IMPACT";
-      position: absolute;
-      right: -28px;
-      top: 39px;
-      padding: 11px 36px;
-      transform: rotate(42deg);
-      background: var(--ink);
-      color: var(--paper);
-      font-size: .66rem;
-      letter-spacing: .17em;
-      font-weight: 800;
-    }
-    .art-sun {
-      position: absolute;
-      z-index: -1;
-      width: 82%;
-      height: 32%;
-      left: 9%;
-      bottom: -7%;
-      border-radius: 50% 50% 0 0;
-      background: var(--accent);
-    }
-    .art-device {
-      position: absolute;
-      width: 43%;
-      height: 62%;
-      left: 28%;
-      top: 21%;
-      padding: 9px;
-      transform: rotate(-7deg);
-      border: 2px solid var(--ink);
-      border-radius: 25px;
-      background: var(--ink);
-      box-shadow: 18px 21px 0 rgba(23, 35, 31, .13);
-    }
-    .device-screen {
-      position: relative;
-      height: 100%;
-      overflow: hidden;
-      border-radius: 17px;
-      background: #f6eee1;
-    }
-    .device-top { height: 21px; display: flex; justify-content: center; align-items: center; }
-    .device-top::after { content: ""; width: 34px; height: 4px; border-radius: 9px; background: var(--ink); }
-    .device-label { padding: 10px 12px 0; font-size: .48rem; font-weight: 800; letter-spacing: .18em; }
-    .device-product {
-      position: absolute;
-      width: 62%;
-      height: 43%;
-      left: 19%;
-      top: 31%;
-      border-radius: 45% 45% 12px 12px;
-      background: linear-gradient(130deg, #c7a77c, #edd8b3 50%, #a47e55);
-      box-shadow: 8px 12px 20px rgba(23, 35, 31, .14);
-    }
-    .device-product::before {
-      content: "";
-      position: absolute;
-      width: 27%;
-      height: 18%;
-      left: 36%;
-      top: -12%;
-      border-radius: 4px 4px 0 0;
-      background: #947552;
-    }
-    .device-copy { position: absolute; left: 12px; right: 12px; bottom: 17px; text-align: center; }
-    .device-copy strong { display: block; font-family: var(--serif); font-size: clamp(.8rem, 1.6vw, 1.2rem); font-weight: 400; }
-    .device-copy span { display: inline-block; margin-top: 7px; padding: 4px 9px; background: var(--accent); color: white; font-size: .45rem; font-weight: 800; letter-spacing: .1em; }
-    .art-sticker { position: absolute; right: 8%; bottom: 15%; width: 92px; height: 92px; display: grid; place-items: center; border: 1px solid var(--ink); border-radius: 50%; background: var(--paper); transform: rotate(9deg); }
-    .art-sticker span { max-width: 60px; text-align: center; font-size: .58rem; font-weight: 800; letter-spacing: .1em; line-height: 1.4; }
-
-    /* About */
-    .about { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 10%; }
-    .about-copy h2 { margin: 17px 0 25px; }
-    .about-copy p { color: var(--muted); max-width: 630px; }
-    .about-quote { padding: 28px 0 0 28px; border-left: 1px solid var(--accent); align-self: center; }
-    .about-quote p { margin: 0; font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2.45rem); line-height: 1.24; }
-    .about-quote span { display: block; margin-top: 18px; color: var(--muted); font-size: .8rem; }
-
-    /* Services */
-    .service-list { border-top: 1px solid var(--line); }
-    .service-row {
-      display: grid;
-      grid-template-columns: 70px 1fr 1.1fr 30px;
-      align-items: center;
-      gap: 24px;
-      padding: 24px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .service-number { color: var(--accent); font-size: .75rem; font-weight: 800; letter-spacing: .1em; }
-    .service-row h3 { margin: 0; font-family: var(--serif); font-size: clamp(1.35rem, 2.4vw, 2rem); font-weight: 400; letter-spacing: -.03em; }
-    .service-row p { margin: 0; color: var(--muted); font-size: .88rem; }
-    .service-mark { color: var(--accent); font-size: 1.2rem; text-align: right; }
-
-    /* Portfolio */
-    .portfolio { background: var(--ink); color: var(--paper); }
-    .portfolio .eyebrow { color: #efa087; }
-    .portfolio .section-intro { color: #b7c0b8; }
-    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
-    .filter-btn {
-      min-height: 40px;
-      padding: 8px 14px;
-      border: 1px solid #46514b;
-      background: transparent;
-      color: #d8ded8;
-      border-radius: 2px;
-      font-size: .75rem;
-      cursor: pointer;
-      transition: background .2s, color .2s, border-color .2s;
-    }
-    .filter-btn:hover, .filter-btn[aria-pressed="true"] { border-color: var(--accent); background: var(--accent); color: white; }
-    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 42px 24px; }
-    .project-card { min-width: 0; }
-    .project-open {
-      display: block;
-      width: 100%;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      color: inherit;
-      text-align: left;
-      cursor: pointer;
-    }
-    .project-preview {
-      position: relative;
-      display: block;
-      min-height: 290px;
-      overflow: hidden;
-      background: #d4c4ad;
-      color: var(--ink);
-      transition: transform .25s ease;
-    }
-    .project-open:hover .project-preview { transform: translateY(-4px); }
-    .project-preview::after { content: ""; position: absolute; inset: 0; border: 1px solid rgba(255,255,255,.18); pointer-events: none; }
-    .preview-ad { background: #e9a56f; }
-    .preview-ad .mock-copy { position: absolute; z-index: 2; left: 9%; top: 14%; width: 44%; }
-    .mock-kicker { display: block; font-size: .58rem; letter-spacing: .19em; font-weight: 800; }
-    .mock-copy strong { display: block; margin-top: 10px; font-family: var(--serif); font-weight: 400; font-size: clamp(1.7rem, 3.2vw, 3.2rem); line-height: .97; }
-    .mock-copy small { display: inline-block; margin-top: 17px; padding: 8px 12px; background: var(--ink); color: white; font-size: .57rem; font-weight: 800; letter-spacing: .1em; }
-    .mock-jar {
-      position: absolute;
-      right: 12%;
-      bottom: -7%;
-      width: 30%;
-      height: 73%;
-      border: 2px solid rgba(23,35,31,.35);
-      border-radius: 42% 42% 16px 16px;
-      background: linear-gradient(90deg, #a95c36, #e9b17d 45%, #b56640);
-      box-shadow: -19px 17px 0 rgba(101, 55, 39, .14);
-    }
-    .mock-jar::before { content: ""; position: absolute; width: 42%; height: 11%; left: 29%; top: -9%; background: #4b3829; border-radius: 4px; }
-    .mock-jar::after { content: "BOTANICAL\nSERUM"; white-space: pre; position: absolute; left: 0; right: 0; top: 43%; text-align: center; font: 700 .62rem/1.6 var(--sans); letter-spacing: .12em; }
-    .preview-video { background: #7b8877; }
-    .preview-video .video-sun { position: absolute; width: 35%; aspect-ratio: 1; top: 13%; left: 32%; border-radius: 50%; background: #efd49f; }
-    .preview-video .video-bottle { position: absolute; width: 22%; height: 58%; bottom: -2%; left: 39%; border-radius: 38% 38% 10px 10px; background: linear-gradient(90deg, #3d5041, #b5b88a 52%, #53604a); box-shadow: 18px 14px 24px #465146; }
-    .preview-video .video-bottle::before { content: ""; position: absolute; width: 36%; height: 16%; left: 32%; top: -12%; background: #273a2d; }
-    .preview-video .play { position: absolute; z-index: 2; top: 43%; left: 46%; width: 48px; height: 48px; display: grid; place-items: center; border: 1px solid white; border-radius: 50%; color: white; background: rgba(23,35,31,.23); }
-    .preview-design { background: #e9d4b5; }
-    .preview-design .design-shape { position: absolute; width: 52%; height: 80%; right: 4%; top: 12%; border-radius: 48% 48% 4px 4px; background: #ba6545; transform: rotate(11deg); }
-    .preview-design .design-shape::after { content: ""; position: absolute; width: 50%; height: 56%; top: 22%; left: 25%; border: 1px solid rgba(255,255,255,.55); border-radius: 50%; }
-    .preview-design .design-words { position: absolute; z-index: 2; left: 9%; top: 21%; max-width: 42%; font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 3.2rem); line-height: .95; }
-    .preview-landing { background: #d4e1d8; }
-    .landing-browser { position: absolute; inset: 12% 10%; background: #f7f3e9; box-shadow: 0 15px 30px rgba(23,35,31,.14); }
-    .landing-browser::before { content: "●  ●  ●"; display: block; padding: 7px 10px; color: #7b897e; border-bottom: 1px solid #d8ded6; font-size: .52rem; letter-spacing: .15em; }
-    .landing-content { padding: 8% 9%; }
-    .landing-content span { font-size: .48rem; letter-spacing: .15em; font-weight: 800; color: var(--accent); }
-    .landing-content strong { display: block; max-width: 65%; margin: 6px 0 9px; font: 400 clamp(1.3rem, 2.5vw, 2.7rem)/.98 var(--serif); }
-    .landing-content i { display: block; width: 28%; height: 8px; margin-bottom: 6px; background: #d8ded6; }
-    .landing-content b { display: inline-block; margin-top: 10px; padding: 7px 10px; background: var(--ink); color: white; font-size: .47rem; }
-    .landing-orb { position: absolute; width: 24%; aspect-ratio: 1; right: 10%; top: 32%; border-radius: 50%; background: #e4a078; }
-    .preview-web { background: #b9c4b8; }
-    .web-panel { position: absolute; inset: 11% 10%; background: #263d36; color: #f4efe4; }
-    .web-panel::before { content: "FIELD NOTES     SHOP     ABOUT"; display: block; padding: 13px 16px; border-bottom: 1px solid rgba(255,255,255,.18); font-size: .45rem; letter-spacing: .13em; }
-    .web-panel strong { display: block; width: 55%; margin: 10% 8%; font: 400 clamp(1.8rem, 3.5vw, 3.5rem)/.94 var(--serif); }
-    .web-panel em { display: block; width: 34%; height: 36%; position: absolute; right: 7%; bottom: 8%; background: #d69d72; border-radius: 50% 50% 4px 4px; }
-    .sample-tag { position: absolute; z-index: 3; right: 12px; bottom: 12px; padding: 5px 8px; background: var(--paper); color: var(--ink); font-size: .58rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
-    .project-meta { display: flex; justify-content: space-between; gap: 16px; margin-top: 15px; align-items: baseline; }
-    .project-meta h3 { margin: 0; font: 400 1.45rem var(--serif); }
-    .project-category { color: #b8c3ba; font-size: .71rem; }
-    .project-description { max-width: 500px; margin: 7px 0 0; color: #b7c0b8; font-size: .84rem; }
-    .empty-projects { padding: 24px 0; color: #b7c0b8; }
-
-    /* Skills */
-    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; }
-    .skills-grid h2 { margin: 18px 0 18px; }
-    .skills-grid p { max-width: 470px; color: var(--muted); }
-    .skill-tags { display: flex; align-content: start; flex-wrap: wrap; gap: 10px; padding-top: 20px; }
-    .skill-tags span { padding: 10px 14px; border: 1px solid var(--line); color: #36433c; font-size: .78rem; }
-
-    /* Process */
-    .process { background: var(--paper-deep); }
-    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 42px; border-top: 1px solid #cfc7b8; }
-    .process-step { padding: 22px 20px 0 0; }
-    .process-step + .process-step { padding-left: 22px; border-left: 1px solid #cfc7b8; }
-    .process-step span { color: var(--accent); font-size: .75rem; font-weight: 800; letter-spacing: .12em; }
-    .process-step h3 { margin: 19px 0 10px; font: 400 1.45rem var(--serif); }
-    .process-step p { color: var(--muted); font-size: .85rem; }
-
-    /* Contact and footer */
-    .contact { background: var(--accent); color: white; }
-    .contact .eyebrow { color: #ffe5d8; }
-    .contact .eyebrow::before { background: currentColor; }
-    .contact-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 10%; align-items: end; }
-    .contact h2 { max-width: 750px; margin: 20px 0 20px; }
-    .contact-copy { max-width: 500px; margin-bottom: 0; color: #ffdfd3; }
-    .contact-side { padding-bottom: 5px; }
-    .contact-link { display: inline-flex; align-items: center; gap: 13px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.6); color: white; text-decoration: none; font-weight: 700; }
-    .contact-link:hover { color: #ffe0d2; }
-    .contact-note { margin: 17px 0 0; color: #ffdfd3; font-size: .78rem; }
-    .site-footer { padding: 27px 0; background: var(--ink); color: var(--paper); }
-    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
-    .footer-tagline { margin: 0; color: #c1c9c1; font-size: .76rem; }
-    .footer-nav { display: flex; flex-wrap: wrap; gap: 18px; }
-    .footer-nav a { color: #e2e6df; text-decoration: none; font-size: .75rem; }
-    .footer-nav a:hover { color: #efa087; }
-    .copyright { margin: 0; color: #aeb8af; font-size: .72rem; white-space: nowrap; }
-
-    /* Accessible project detail dialog */
-    .modal {
-      position: fixed;
-      z-index: 50;
-      inset: 0;
-      display: none;
-      place-items: center;
-      padding: 22px;
-      background: rgba(10, 17, 14, .76);
-    }
-    .modal.is-open { display: grid; }
-    .modal-panel {
-      position: relative;
-      width: min(720px, 100%);
-      max-height: min(85vh, 800px);
-      overflow: auto;
-      padding: clamp(22px, 5vw, 42px);
-      background: var(--paper);
-      color: var(--ink);
-      box-shadow: 0 25px 80px rgba(0,0,0,.28);
-    }
-    .modal-close {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      width: 44px;
-      height: 44px;
-      border: 1px solid var(--line);
-      background: transparent;
-      color: var(--ink);
-      font-size: 1.3rem;
-      cursor: pointer;
-    }
-    .modal-panel h2 { max-width: 560px; margin: 18px 48px 12px 0; font-size: clamp(2.2rem, 6vw, 3.7rem); }
-    .modal-panel p { max-width: 590px; color: var(--muted); }
-    .modal-preview { margin: 22px 0; }
-    .modal-preview .project-preview { min-height: 250px; }
-
-    @media (max-width: 900px) {
-      .nav-links { gap: 12px; }
-      .nav-links a { font-size: .71rem; }
-      .hero-grid { gap: 4%; }
-      .hero-art { min-height: 410px; }
-      .service-row { grid-template-columns: 45px 1fr 1.1fr 22px; gap: 16px; }
-    }
-    @media (max-width: 720px) {
-      .wrap { width: min(var(--content), calc(100% - 36px)); }
-      .section { padding: 76px 0; }
-      .nav-row { min-height: 68px; }
+    @media (max-width: 600px) {
+      .wrap { width: min(100% - 34px, var(--page)); }
+      .nav { height: 66px; }
       .menu-toggle { display: inline-grid; place-items: center; }
-      .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        display: none;
-        align-items: stretch;
-        flex-direction: column;
-        gap: 0;
-        padding: 8px 18px 16px;
-        background: var(--paper);
-        border-bottom: 1px solid var(--line);
-      }
-      .nav-links.is-open { display: flex; }
-      .nav-links a { padding: 11px 4px; font-size: .9rem; }
-      .nav-links .nav-cta { margin-top: 7px; padding: 11px 13px; text-align: center; }
-      .hero { padding: 52px 0 58px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 38px; }
-      .hero-art { min-height: 400px; }
-      .hero h1 { font-size: clamp(3.4rem, 14vw, 6rem); }
-      .section-heading { display: block; margin-bottom: 30px; }
-      .section-intro { margin-top: 17px; }
-      .about-grid, .skills-grid, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
-      .about-quote { margin-top: 4px; }
-      .service-row { grid-template-columns: 37px 1fr 22px; gap: 12px; align-items: start; }
-      .service-row p { grid-column: 2 / 3; }
-      .service-mark { grid-column: 3; grid-row: 1; }
-      .project-grid { gap: 34px 16px; }
-      .project-preview { min-height: 240px; }
-      .process-grid { grid-template-columns: 1fr 1fr; row-gap: 25px; }
-      .process-step { padding-right: 16px; }
-      .process-step + .process-step { padding-left: 16px; }
-      .process-step:nth-child(3) { padding-left: 0; border-left: 0; }
-      .contact-side { padding-top: 5px; }
-      .footer-row { align-items: flex-start; flex-direction: column; }
-    }
-    @media (max-width: 480px) {
-      .hero-art { min-height: 340px; }
-      .art-sticker { width: 74px; height: 74px; right: 5%; bottom: 11%; }
-      .art-sticker span { font-size: .49rem; }
-      .project-grid { grid-template-columns: 1fr; }
-      .project-preview { min-height: 270px; }
-      .project-meta { align-items: flex-start; flex-direction: column; gap: 4px; }
-      .filters { gap: 7px; }
-      .filter-btn { padding: 7px 10px; font-size: .7rem; }
-      .process-grid { grid-template-columns: 1fr; }
-      .process-step, .process-step + .process-step { padding: 18px 0 0; border-left: 0; border-top: 1px solid #cfc7b8; }
-      .process-step:first-child { border-top: 0; }
-      .footer-nav { gap: 12px; }
+      .navlinks { display: none; position: absolute; top: 66px; left: 0; right: 0; padding: 20px 22px 24px; background: var(--paper); border-bottom: 1px solid var(--line); align-items: stretch; flex-direction: column; gap: 14px; }
+      .navlinks.open { display: flex; }
+      .navlinks .pill { align-self: start; }
+      .hero { padding-top: 68px; gap: 32px; }
+      h1 { font-size: clamp(3.3rem, 16vw, 5rem); }
+      section { padding-block: 70px; }
+      .work-empty { grid-template-columns: 1fr; padding: 26px; }
+      .work-mark { width: 60px; height: 60px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service { min-height: auto; }
+      .service .num { margin-bottom: 18px; }
+      footer { flex-direction: column; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
-
 <body>
-  <header class="site-header">
-    <div class="wrap nav-row">
-      <a class="wordmark" href="#home" aria-label="Anis Khan home">ANIS<span>.</span>KHAN</a>
-      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-nav">
-        <span aria-hidden="true">☰</span>
-      </button>
-      <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Anis Khan home">AK<span>.</span></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navlinks">☰</button>
+      <div class="navlinks" id="navlinks">
+        <a href="#work">Work</a>
         <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-        <a class="nav-cta" href="#contact">Let’s Talk <span aria-hidden="true">↗</span></a>
-      </nav>
-    </div>
+        <a href="#about">About</a>
+        <a class="pill" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
   </header>
 
   <main>
-    <section class="hero" id="home">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Digital marketer · AI creative · web designer</span>
-          <h1>Good ideas deserve <em>great</em> execution.</h1>
-          <p class="hero-lede">I’m Anis Khan. I help businesses bring their ideas to life through thoughtful digital marketing, product visuals, and websites built to make a strong first impression.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#portfolio">Explore My Work <span class="button-arrow" aria-hidden="true">↗</span></a>
-            <a class="button" href="#contact">Let’s Work Together <span class="button-arrow" aria-hidden="true">↗</span></a>
+    <section class="hero wrap" id="home">
+      <div class="reveal">
+        <div class="eyebrow">Digital marketing · Web design</div>
+        <!-- Replace this headline and introduction with your preferred wording. -->
+        <h1>Ideas into<br><em>digital impact.</em></h1>
+        <p class="intro">I’m Anis Khan, a digital marketer and web designer. I help businesses strengthen their online presence with thoughtful marketing and modern, responsive websites.</p>
+        <div class="actions">
+          <a class="button primary" href="#work">View my work <span aria-hidden="true">↓</span></a>
+          <a class="button" href="#contact">Let’s work together <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <aside class="hero-note reveal">
+        <strong>Strategy meets design.</strong>
+        Digital solutions shaped around your brand, your audience, and your goals.
+      </aside>
+    </section>
+
+    <section class="wrap" id="work">
+      <div class="section-head reveal">
+        <div><div class="eyebrow">A selection</div><h2>Selected work</h2></div>
+        <p>Project images and descriptions weren’t available in the accessible source content. Add verified work here when ready.</p>
+      </div>
+      <!-- Replace this honest placeholder with genuine portfolio items and image URLs.
+           For each project, add a figure with an img, title, category, and real description. -->
+      <div class="work reveal">
+        <div class="work-empty">
+          <div>
+            <h3>Your next standout project belongs here.</h3>
+            <p>This section is intentionally free of invented client work. Replace it with real project screenshots, titles, categories, and descriptions. Use descriptive alt text and loading="lazy" on project images.</p>
           </div>
-          <p class="hero-note"><span class="status-dot" aria-hidden="true"></span> Open to thoughtful projects and collaborations</p>
+          <div class="work-mark" aria-hidden="true">✳</div>
         </div>
-        <div class="hero-art" role="img" aria-label="An editorial illustration of a product campaign displayed on a phone">
-          <div class="art-sun"></div>
-          <div class="art-device">
-            <div class="device-screen">
-              <div class="device-top"></div>
-              <div class="device-label">OBJECTS FOR EVERY DAY</div>
-              <div class="device-product"></div>
-              <div class="device-copy"><strong>Made to feel good.</strong><span>DISCOVER THE COLLECTION</span></div>
-            </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="services">
+      <div class="section-head reveal">
+        <div><div class="eyebrow">How I can help</div><h2>Services</h2></div>
+        <p>Practical creative and digital support to help your business show up online.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service reveal"><span class="num">01</span><h3>Digital marketing</h3><p>Marketing strategies and social campaigns to build visibility and reach your audience.</p></article>
+        <article class="service reveal"><span class="num">02</span><h3>Social media</h3><p>Thoughtful social media marketing to grow your presence and engage your community.</p></article>
+        <article class="service reveal"><span class="num">03</span><h3>Video editing</h3><p>Engaging video content for social platforms, advertising, and online marketing.</p></article>
+        <article class="service reveal"><span class="num">04</span><h3>Canva design</h3><p>Clean visual designs for brands, social media, and marketing campaigns.</p></article>
+        <article class="service reveal"><span class="num">05</span><h3>Landing pages</h3><p>Focused landing-page design built to support leads, sales, and business goals.</p></article>
+        <article class="service reveal"><span class="num">06</span><h3>Shopify</h3><p>Professional Shopify store design and customization for a smooth shopping experience.</p></article>
+        <article class="service reveal"><span class="num">07</span><h3>Web design</h3><p>Modern, responsive websites designed to work across devices and screen sizes.</p></article>
+        <article class="service reveal"><span class="num">08</span><h3>SEO</h3><p>Search optimization to help people discover your business organically.</p></article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-inner wrap">
+        <div class="reveal"><div class="eyebrow">A little about me</div><h2>Digital, with purpose.</h2></div>
+        <div class="about-copy reveal">
+          <p>I’m Anis Khan, a digital marketer and web designer passionate about helping businesses grow. I create strategies that strengthen online presence and brand visibility, alongside modern, responsive WordPress websites designed to support marketing goals.</p>
+          <p>My work spans digital and social media marketing, web design, video editing, visual design, landing pages, Shopify, and SEO.</p>
+          <div class="skills" aria-label="Skills">
+            <span>Facebook Ads</span><span>Digital marketing</span><span>Web design</span>
+            <span>WordPress</span><span>Video editing</span><span>Landing pages</span>
+            <span>SEO</span><span>Product design</span>
           </div>
-          <div class="art-sticker"><span>MAKE IT<br>MATTER</span></div>
         </div>
       </div>
     </section>
 
-    <section class="section about" id="about">
-      <div class="wrap about-grid">
-        <div class="about-copy">
-          <span class="eyebrow">A little about me</span>
-          <h2>Strategy with a creative point of view.</h2>
-          <p>I’m a digital marketer, AI creative specialist, and web designer focused on making the moving parts of a brand work together. From campaign setup to the landing page it leads to, I like building clear, considered experiences that give people a reason to take the next step.</p>
-          <p>My work spans paid social, tracking, product content, and website design. I bring curiosity, practical thinking, and attention to detail to every brief.</p>
-        </div>
-        <blockquote class="about-quote">
-          <p>“The best digital work feels clear, useful, and unmistakably made for the brand.”</p>
-          <span>A principle I bring to every project.</span>
-        </blockquote>
-      </div>
-    </section>
-
-    <section class="section" id="services">
-      <div class="wrap">
-        <div class="section-heading">
-          <div><span class="eyebrow">What I can help with</span><h2 style="margin-top:17px">Services built around<br>your next step.</h2></div>
-          <p class="section-intro">Whether you need a campaign, a creative asset, or a stronger online home, I can help shape and build the pieces that move your business forward.</p>
-        </div>
-        <div class="service-list">
-          <article class="service-row"><span class="service-number">01</span><h3>Meta Ads</h3><p>Facebook and Instagram campaign planning, setup, and creative support for your business goals.</p><span class="service-mark" aria-hidden="true">↗</span></article>
-          <article class="service-row"><span class="service-number">02</span><h3>Pixel &amp; Conversion Tracking</h3><p>Meta Pixel setup, conversion tracking, and server-side tracking implementation support.</p><span class="service-mark" aria-hidden="true">↗</span></article>
-          <article class="service-row"><span class="service-number">03</span><h3>AI Product Videos</h3><p>Concept-led AI product videos and video ads designed to make products stand out in the feed.</p><span class="service-mark" aria-hidden="true">↗</span></article>
-          <article class="service-row"><span class="service-number">04</span><h3>Product Design &amp; Ad Creative</h3><p>Product-focused visual concepts and advertising creatives for campaigns and digital storefronts.</p><span class="service-mark" aria-hidden="true">↗</span></article>
-          <article class="service-row"><span class="service-number">05</span><h3>Landing Pages</h3><p>Focused landing page design that connects your message, offer, and visitor journey.</p><span class="service-mark" aria-hidden="true">↗</span></article>
-          <article class="service-row"><span class="service-number">06</span><h3>Facebook Page Management</h3><p>Facebook Page setup and management to help keep your brand’s presence clear and consistent.</p><span class="service-mark" aria-hidden="true">↗</span></article>
-          <article class="service-row"><span class="service-number">07</span><h3>WordPress &amp; Elementor</h3><p>Website design and page building with WordPress and Elementor, shaped around your content.</p><span class="service-mark" aria-hidden="true">↗</span></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section portfolio" id="portfolio">
-      <div class="wrap">
-        <div class="section-heading">
-          <div><span class="eyebrow">Selected explorations</span><h2 style="margin-top:17px">Ideas, made visible.</h2></div>
-          <p class="section-intro">A collection of concept work across campaigns, product visuals, and web. Every item shown here is a sample project, not a client case study.</p>
-        </div>
-        <div class="filters" role="group" aria-label="Filter sample projects">
-          <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All Projects</button>
-          <button class="filter-btn" type="button" data-filter="meta-ads" aria-pressed="false">Meta Ads</button>
-          <button class="filter-btn" type="button" data-filter="ai-video-ads" aria-pressed="false">AI Video Ads</button>
-          <button class="filter-btn" type="button" data-filter="product-design" aria-pressed="false">Product Design</button>
-          <button class="filter-btn" type="button" data-filter="landing-pages" aria-pressed="false">Landing Pages</button>
-          <button class="filter-btn" type="button" data-filter="web-design" aria-pressed="false">Web Design</button>
-        </div>
-
-        <div class="project-grid" id="project-grid">
-          <article class="project-card" data-category="meta-ads product-design">
-            <button class="project-open" type="button" data-title="A botanical daily ritual" data-category-label="Meta Ads · Product Design" data-description="A fictional campaign concept for a botanical skincare product. The direction pairs warm product styling with a concise, benefit-led message designed for a social ad placement.">
-              <span class="project-preview preview-ad" aria-hidden="true"><span class="mock-copy"><span class="mock-kicker">A SMALL DAILY RITUAL</span><strong>Care,<br>naturally.</strong><small>MEET YOUR NEW ROUTINE</small></span><span class="mock-jar"></span><span class="sample-tag">Sample concept</span></span>
-              <span class="project-meta"><h3>A botanical daily ritual</h3><span class="project-category">Meta Ads · Product Design</span></span>
-              <span class="project-description">A social campaign direction for a fictional skincare line.</span>
-            </button>
-          </article>
-
-          <article class="project-card" data-category="ai-video-ads">
-            <button class="project-open" type="button" data-title="Stillness in motion" data-category-label="AI Video Ads" data-description="A fictional AI video ad concept for a plant-based wellness product. The visual direction uses natural color, a simple hero product, and a calm, cinematic mood.">
-              <span class="project-preview preview-video" aria-hidden="true"><span class="video-sun"></span><span class="video-bottle"></span><span class="play">▶</span><span class="sample-tag">Sample concept</span></span>
-              <span class="project-meta"><h3>Stillness in motion</h3><span class="project-category">AI Video Ads</span></span>
-              <span class="project-description">A cinematic product-video concept with a quiet, natural feel.</span>
-            </button>
-          </article>
-
-          <article class="project-card" data-category="product-design meta-ads">
-            <button class="project-open" type="button" data-title="Form follows feeling" data-category-label="Product Design · Meta Ads" data-description="A fictional product creative exploration for a home and lifestyle collection. It focuses on tactile shape, a restrained palette, and a distinctive graphic frame.">
-              <span class="project-preview preview-design" aria-hidden="true"><span class="design-words">Form<br>follows<br>feeling.</span><span class="design-shape"></span><span class="sample-tag">Sample concept</span></span>
-              <span class="project-meta"><h3>Form follows feeling</h3><span class="project-category">Product Design · Meta Ads</span></span>
-              <span class="project-description">A visual concept for an imaginary home and lifestyle brand.</span>
-            </button>
-          </article>
-
-          <article class="project-card" data-category="landing-pages">
-            <button class="project-open" type="button" data-title="A clearer first click" data-category-label="Landing Pages" data-description="A sample landing page concept for a fictional sustainable homeware collection. The page sketch puts the offer, a clear call to action, and a calm visual hierarchy at the center.">
-              <span class="project-preview preview-landing" aria-hidden="true"><span class="landing-browser"><span class="landing-content"><span>LIVE LIGHTER</span><strong>Thoughtful things for everyday living.</strong><i></i><i></i><b>EXPLORE THE COLLECTION</b></span><span class="landing-orb"></span></span><span class="sample-tag">Sample concept</span></span>
-              <span class="project-meta"><h3>A clearer first click</h3><span class="project-category">Landing Pages</span></span>
-              <span class="project-description">A focused landing page concept for a fictional homeware collection.</span>
-            </button>
-          </article>
-
-          <article class="project-card" data-category="web-design">
-            <button class="project-open" type="button" data-title="A slower kind of Sunday" data-category-label="Web Design" data-description="A sample web design direction for a fictional independent lifestyle shop. The concept uses editorial typography, a restrained navigation, and a warm, nature-inspired visual palette.">
-              <span class="project-preview preview-web" aria-hidden="true"><span class="web-panel"><strong>A slower kind of Sunday.</strong><em></em></span><span class="sample-tag">Sample concept</span></span>
-              <span class="project-meta"><h3>A slower kind of Sunday</h3><span class="project-category">Web Design</span></span>
-              <span class="project-description">An editorial storefront concept for an imaginary lifestyle brand.</span>
-            </button>
-          </article>
-
-          <article class="project-card" data-category="meta-ads ai-video-ads">
-            <button class="project-open" type="button" data-title="Made for the everyday" data-category-label="Meta Ads · AI Video Ads" data-description="A fictional campaign concept for a reusable drinkware label. The sample pairs punchy campaign copy with a product-first visual direction for social placements.">
-              <span class="project-preview preview-ad" aria-hidden="true" style="background:#89a79b"><span class="mock-copy"><span class="mock-kicker">YOUR EVERYDAY, REIMAGINED</span><strong>Take the<br>good route.</strong><small>MEET YOUR NEW SIDEKICK</small></span><span class="mock-jar" style="background:linear-gradient(90deg,#405e54,#c3d2b5 50%,#5d796b)"></span><span class="sample-tag">Sample concept</span></span>
-              <span class="project-meta"><h3>Made for the everyday</h3><span class="project-category">Meta Ads · AI Video Ads</span></span>
-              <span class="project-description">A fictional social campaign direction for reusable drinkware.</span>
-            </button>
-          </article>
-        </div>
-        <p class="empty-projects" id="empty-projects" hidden>No sample projects in this category yet.</p>
-      </div>
-    </section>
-
-    <section class="section" id="skills">
-      <div class="wrap skills-grid">
+    <section class="contact wrap" id="contact">
+      <div class="contact-box reveal">
         <div>
-          <span class="eyebrow">Tools &amp; focus areas</span>
-          <h2>Useful skills.<br>Thoughtful execution.</h2>
-          <p>I bring creative and technical pieces together across the campaign journey, from the first idea to the page or tracking setup that supports it.</p>
+          <div class="eyebrow">Have a project in mind?</div>
+          <h2>Let’s make something meaningful.</h2>
+          <p>Get in touch to talk about your project, your website, or growing your business online.</p>
+          <div class="contact-details">
+            <!-- Update contact details or social links here if they change. -->
+            <a href="mailto:anisdevoloper@gmail.com">anisdevoloper@gmail.com</a>
+            <a href="tel:+8801811227735">+880 1811-227735</a>
+            <a href="https://facebook.com/aniskhanmarketer" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+          </div>
         </div>
-        <div class="skill-tags" aria-label="Areas of work">
-          <span>Meta Ads</span><span>Facebook &amp; Instagram</span><span>Meta Pixel</span><span>Conversion Tracking</span><span>Server-Side Tracking</span><span>AI Product Videos</span><span>Advertising Creatives</span><span>Product Design</span><span>Landing Page Design</span><span>Facebook Page Management</span><span>WordPress</span><span>Elementor</span><span>CapCut Video Editing</span><span>Digital Marketing</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section process" id="process">
-      <div class="wrap">
-        <div class="section-heading">
-          <div><span class="eyebrow">How we’ll work</span><h2 style="margin-top:17px">A clear path from<br>brief to launch.</h2></div>
-          <p class="section-intro">Good collaboration starts with listening, stays focused on the goal, and leaves room to improve once the work is live.</p>
-        </div>
-        <div class="process-grid">
-          <article class="process-step"><span>01 / LISTEN</span><h3>Understand the Business</h3><p>We begin with your goals, audience, offer, and the challenge you want to solve.</p></article>
-          <article class="process-step"><span>02 / DEFINE</span><h3>Plan the Strategy</h3><p>We agree on priorities, direction, deliverables, and what success should mean for this project.</p></article>
-          <article class="process-step"><span>03 / MAKE</span><h3>Create the Solution</h3><p>I develop the campaign, creative, tracking setup, or web experience around the brief.</p></article>
-          <article class="process-step"><span>04 / REFINE</span><h3>Launch and Optimize</h3><p>We launch the work, review what’s happening, and identify practical opportunities to improve.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section contact" id="contact">
-      <div class="wrap contact-grid">
-        <div>
-          <span class="eyebrow">Have a project in mind?</span>
-          <h2>Let’s make something that moves your business forward.</h2>
-          <p class="contact-copy">Tell me what you’re working on and what you want to achieve. Get in touch through my Facebook page to start a conversation.</p>
-        </div>
-        <div class="contact-side">
-          <a class="contact-link" href="https://facebook.com/aniskhanmarketer" target="_blank" rel="noopener noreferrer">Message Anis on Facebook <span aria-hidden="true">↗</span></a>
-          <p class="contact-note">This portfolio uses a static contact link. A static form would need a backend or a form service to deliver messages.</p>
-        </div>
+        <a class="button" href="mailto:anisdevoloper@gmail.com">Start a conversation <span aria-hidden="true">↗</span></a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap footer-row">
-      <div>
-        <a class="wordmark" href="#home" style="color:var(--paper)">ANIS<span>.</span>KHAN</a>
-        <p class="footer-tagline">Thoughtful digital work, made with intention.</p>
-      </div>
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="#about">About</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#contact">Contact</a>
-        <a href="https://facebook.com/aniskhanmarketer" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
-      </nav>
-      <p class="copyright">© <span id="year"></span> Anis Khan</p>
-    </div>
+  <footer class="wrap">
+    <span>© <span id="year"></span> Anis Khan</span>
+    <span>Digital marketer & web designer · <a href="#home">Back to top ↑</a></span>
   </footer>
 
-  <div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-description">
-    <div class="modal-panel">
-      <button class="modal-close" type="button" aria-label="Close project details">×</button>
-      <span class="eyebrow" id="modal-category">Sample project</span>
-      <h2 id="modal-title"></h2>
-      <div class="modal-preview" id="modal-preview"></div>
-      <p id="modal-description"></p>
-      <p><strong>Sample concept:</strong> This is illustrative portfolio work, not a claim of client work or results.</p>
-    </div>
-  </div>
-
   <script>
-    (() => {
-      "use strict";
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("#navlinks");
 
-      const menuToggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector("#primary-nav");
+    toggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+      toggle.textContent = open ? "×" : "☰";
+    });
 
-      menuToggle.addEventListener("click", () => {
-        const isOpen = nav.classList.toggle("is-open");
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
-        menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
-        menuToggle.querySelector("span").textContent = isOpen ? "×" : "☰";
+    nav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open navigation menu");
+        toggle.textContent = "☰";
       });
+    });
 
-      nav.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          nav.classList.remove("is-open");
-          menuToggle.setAttribute("aria-expanded", "false");
-          menuToggle.setAttribute("aria-label", "Open navigation menu");
-          menuToggle.querySelector("span").textContent = "☰";
-        });
-      });
+    document.querySelector("#year").textContent = new Date().getFullYear();
 
-      const filterButtons = document.querySelectorAll(".filter-btn");
-      const projectCards = document.querySelectorAll(".project-card");
-      const emptyProjects = document.querySelector("#empty-projects");
-
-      filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const selected = button.dataset.filter;
-          let visibleCount = 0;
-
-          filterButtons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
-          projectCards.forEach((card) => {
-            const categories = card.dataset.category.split(" ");
-            const visible = selected === "all" || categories.includes(selected);
-            card.hidden = !visible;
-            if (visible) visibleCount += 1;
-          });
-          emptyProjects.hidden = visibleCount !== 0;
-        });
-      });
-
-      const modal = document.querySelector("#project-modal");
-      const modalPanel = modal.querySelector(".modal-panel");
-      const modalTitle = document.querySelector("#modal-title");
-      const modalCategory = document.querySelector("#modal-category");
-      const modalDescription = document.querySelector("#modal-description");
-      const modalPreview = document.querySelector("#modal-preview");
-      const closeButton = modal.querySelector(".modal-close");
-      let lastFocusedElement = null;
-
-      function closeModal() {
-        modal.classList.remove("is-open");
-        document.body.classList.remove("modal-open");
-        modalPreview.replaceChildren();
-        if (lastFocusedElement) lastFocusedElement.focus();
-      }
-
-      document.querySelectorAll(".project-open").forEach((button) => {
-        button.addEventListener("click", () => {
-          lastFocusedElement = button;
-          modalTitle.textContent = button.dataset.title;
-          modalCategory.textContent = button.dataset.categoryLabel + " · Sample";
-          modalDescription.textContent = button.dataset.description;
-          const preview = button.querySelector(".project-preview").cloneNode(true);
-          preview.removeAttribute("aria-hidden");
-          modalPreview.replaceChildren(preview);
-          modal.classList.add("is-open");
-          document.body.classList.add("modal-open");
-          closeButton.focus();
-        });
-      });
-
-      closeButton.addEventListener("click", closeModal);
-      modal.addEventListener("click", (event) => {
-        if (event.target === modal) closeModal();
-      });
-
-      document.addEventListener("keydown", (event) => {
-        if (!modal.classList.contains("is-open")) return;
-        if (event.key === "Escape") {
-          closeModal();
-          return;
-        }
-        if (event.key === "Tab") {
-          const focusable = [...modalPanel.querySelectorAll("button, a, [tabindex]:not([tabindex='-1'])")];
-          const first = focusable[0];
-          const last = focusable[focusable.length - 1];
-          if (event.shiftKey && document.activeElement === first) {
-            event.preventDefault();
-            last.focus();
-          } else if (!event.shiftKey && document.activeElement === last) {
-            event.preventDefault();
-            first.focus();
+    // Reveal content as it enters view; show everything if the browser lacks support.
+    const items = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
           }
-        }
-      });
-
-      document.querySelector("#year").textContent = new Date().getFullYear();
-    })();
+        });
+      }, { threshold: 0.12 });
+      items.forEach(item => observer.observe(item));
+    } else {
+      items.forEach(item => item.classList.add("visible"));
+    }
   </script>
 </body>
 </html>
